@@ -267,7 +267,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/25/mysql/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" itemprop="url">page</a></h1>
+                <a class="post-title-link" href="/2019/12/25/mysql/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" itemprop="url">mysql存储过程</a></h1>
         
 
         <div class="post-meta">
@@ -377,6 +377,170 @@
 
 <h5 id="cmd调用存储过程"><a href="#cmd调用存储过程" class="headerlink" title="cmd调用存储过程"></a>cmd调用存储过程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;CALL UserNum(1,$nums);</span><br><span class="line">mysql&gt;SELECT $nums;</span><br></pre></td></tr></table></figure>
 
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/mysql/mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sweep monk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sweep monk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/25/mysql/mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/" itemprop="url">mysql自定义函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T15:28:45+08:00">
+                2019-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="自定义函数："><a href="#自定义函数：" class="headerlink" title="自定义函数："></a>自定义函数：</h5><p>用户自定义函数（user-defined function,UDP）是一种对MySQL 扩展的途径，其用法与内置函数相同。</p>
+<h5 id="创建自定义函数模板"><a href="#创建自定义函数模板" class="headerlink" title="创建自定义函数模板"></a>创建自定义函数模板</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE FUNCTION function_name</span><br><span class="line">RETURNS</span><br><span class="line">&#123;STRING|INTEGER|REAL|DECIMAL&#125;</span><br><span class="line">routine_body</span><br></pre></td></tr></table></figure>
+
+<h5 id="关于函数体"><a href="#关于函数体" class="headerlink" title="关于函数体"></a>关于函数体</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">函数体由合法的SQL语句构成</span><br><span class="line">函数体可以是简单的SELECT或INSERT语句</span><br><span class="line">函数体如果为复合结构则使用 BEGIN….END 语句</span><br><span class="line">复合结构可以包含声明，循环，控制结构</span><br></pre></td></tr></table></figure>
+
+<h5 id="cmd-创建："><a href="#cmd-创建：" class="headerlink" title="cmd 创建："></a>cmd 创建：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE FUNCTION time() RETURNS VARCHAR(30)</span><br><span class="line">RETURN DATE_FORMAT(NOW(),&#39;%Y年%m月%d日:%H时:%i分:%s秒&#39;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="函数调用："><a href="#函数调用：" class="headerlink" title="函数调用："></a>函数调用：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT time();</span><br></pre></td></tr></table></figure>
+
+<h5 id="自定义两个参数的函数"><a href="#自定义两个参数的函数" class="headerlink" title="自定义两个参数的函数"></a>自定义两个参数的函数</h5><p>输入两个值，计算其平均值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE FUNCTION average(num1 SMALLINT UNSIGNED,num2 SMALLINT UNSIGNED)</span><br><span class="line">RETURNS FLOAT(10,2) UNSIGNED</span><br><span class="line">RETURN (num1+num2)&#x2F;2;</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建具有复合机构函数体的函数"><a href="#创建具有复合机构函数体的函数" class="headerlink" title="创建具有复合机构函数体的函数"></a>创建具有复合机构函数体的函数</h5><p>插入一条新数据，user_name，返回该行的id。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE FUNCTION adduser(username VARCHAR(20))</span><br><span class="line">RETURNS INT UNSIGNED</span><br><span class="line">BEGIN</span><br><span class="line">INSERT  goddess(user_name) VALUES (username);</span><br><span class="line">return LAST_INSERT_ID();</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<h5 id="存储过程与自定义函数的区别"><a href="#存储过程与自定义函数的区别" class="headerlink" title="存储过程与自定义函数的区别"></a>存储过程与自定义函数的区别</h5><ul>
+<li><p>存储过程实现的功能要复杂一些，而函数的的针对性更强</p>
+</li>
+<li><p>存储的过程可以返回多个值，函数只能有一个返回值</p>
+</li>
+<li><p>存储过程一般独立的执行，而函数可以作为其他 SQL语句的组成部分来实现。</p>
+</li>
+</ul>
 
           
         
@@ -1786,7 +1950,7 @@ title: create blog<br>date: 2019-12-18 20:11:03<br>tags:</li>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
