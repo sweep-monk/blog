@@ -944,7 +944,201 @@
       
         
           
+            <h4 id="1-1生成SSH-KEY"><a href="#1-1生成SSH-KEY" class="headerlink" title="1.1生成SSH-KEY"></a>1.1生成SSH-KEY</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@your.com” -f ~/.ssh/github-rsa</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在~/.ssh/目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add deploy key）SSH-key的配置中。</p>
+</blockquote>
+<h4 id="1-2测试配置是否成功"><a href="#1-2测试配置是否成功" class="headerlink" title="1.2测试配置是否成功"></a>1.2测试配置是否成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>成功提示：Hi sweep-monk/blog! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<h4 id="1-3-修改hexo的配置文件-config-yml"><a href="#1-3-修改hexo的配置文件-config-yml" class="headerlink" title="1.3 修改hexo的配置文件_config.yml"></a>1.3 修改hexo的配置文件_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: https://github.com/sweep-monk/blog.git</span></span><br><span class="line">  repo: git@github.com:sweep-monk/blog.git    </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-扩展"><a href="#1-4-扩展" class="headerlink" title="1.4 扩展"></a>1.4 扩展</h4><h5 id="1-4-1-配置ssh后，测试报错Permission-denied-publickey"><a href="#1-4-1-配置ssh后，测试报错Permission-denied-publickey" class="headerlink" title="1.4.1 配置ssh后，测试报错Permission denied (publickey)."></a>1.4.1 配置ssh后，测试报错Permission denied (publickey).</h5><ul>
+<li><p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果执行ssh-add时提示”Could not open a connection to your authentication agent”</p>
+</li>
+<li><p>可能是配置多个SSH—Key引起的</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sweep monk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sweep monk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/" itemprop="url">git配置多个SSH-Key</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-20T16:15:06+08:00">
+                2019-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ssh/" itemprop="url" rel="index">
+                    <span itemprop="name">ssh</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们在日常工作中会遇到公司有个gitlab，还有些自己的一些项目放在github上。这样就导致我们要配置不同的ssh-key对应不同的环境。下面我们来看看具体的操作：</p>
+<h4 id="1-1-生成一个公司用的SSH-Key"><a href="#1-1-生成一个公司用的SSH-Key" class="headerlink" title="1.1 生成一个公司用的SSH-Key"></a>1.1 生成一个公司用的SSH-Key</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@yourcompany.com” -f ~&#x2F;.ssh&#x2F;id-rsa</span><br></pre></td></tr></table></figure>
+
+<p>在~/.ssh/目录会生成id-rsa和id-rsa.pub私钥和公钥。 我们将id-rsa.pub中的内容粘帖到公司gitlab服务器的SSH-key的配置中。</p>
+<h3 id="2，生成一个github用的SSH-Key"><a href="#2，生成一个github用的SSH-Key" class="headerlink" title="2，生成一个github用的SSH-Key"></a>2，生成一个github用的SSH-Key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@your.com” -f ~&#x2F;.ssh&#x2F;github-rsa</span><br></pre></td></tr></table></figure>
+
+<p>在~/.ssh/目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容粘帖到github服务器的SSH-key的配置中。</p>
+<h3 id="3，添加私钥"><a href="#3，添加私钥" class="headerlink" title="3，添加私钥"></a>3，添加私钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~&#x2F;.ssh&#x2F;id_rsa $ ssh-add ~&#x2F;.ssh&#x2F;github_rsa</span><br></pre></td></tr></table></figure>
+
+<p>如果执行ssh-add时提示”Could not open a connection to your authentication agent”，可以现执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-agent bash</span><br></pre></td></tr></table></figure>
+
+<p>然后再运行ssh-add命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 可以通过 ssh-add -l 来确私钥列表</span><br><span class="line">$ ssh-add -l</span><br><span class="line"># 可以通过 ssh-add -D 来清空私钥列表</span><br><span class="line">$ ssh-add -D</span><br></pre></td></tr></table></figure>
+
+<p>执行上面命令报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add -l</span><br><span class="line">The agent has no identities. //代理没有身份</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4，修改配置文件"><a href="#4，修改配置文件" class="headerlink" title="4，修改配置文件"></a>4，修改配置文件</h3><p>在 ~/.ssh 目录下新建一个config文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch config</span><br></pre></td></tr></table></figure>
+
+<p>添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># gitlab</span><br><span class="line">Host gitlab.com</span><br><span class="line">    HostName gitlab.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">    #ServerAliveInterval 300</span><br><span class="line">    #ServerAliveCountMax 10</span><br><span class="line"># github</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~&#x2F;.ssh&#x2F;github_rsa</span><br></pre></td></tr></table></figure>
+
+<h3 id="6，测试"><a href="#6，测试" class="headerlink" title="6，测试"></a>6，测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<p>Hi sweep-monk/blog! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<p>就表示成功的连上github了.也可以试试链接公司的gitlab. </p>
+<p>原文：<a href="https://my.oschina.net/stefanzhlg/blog/529403" target="_blank" rel="noopener">地址链接</a></p>
+
           
         
       
@@ -1950,7 +2144,7 @@ title: create blog<br>date: 2019-12-18 20:11:03<br>tags:</li>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1961,7 +2155,7 @@ title: create blog<br>date: 2019-12-18 20:11:03<br>tags:</li>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1972,7 +2166,7 @@ title: create blog<br>date: 2019-12-18 20:11:03<br>tags:</li>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

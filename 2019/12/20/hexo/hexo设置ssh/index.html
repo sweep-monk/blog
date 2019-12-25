@@ -79,12 +79,14 @@
 
 
 
+<meta name="description" content="1.1生成SSH-KEY1$ ssh-keygen -t rsa -C &quot;youremail@your.com” -f ~&#x2F;.ssh&#x2F;github-rsa   在~&#x2F;.ssh&#x2F;目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo设置ssh">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;20&#x2F;hexo&#x2F;hexo%E8%AE%BE%E7%BD%AEssh&#x2F;index.html">
 <meta property="og:site_name" content="sweep monk">
+<meta property="og:description" content="1.1生成SSH-KEY1$ ssh-keygen -t rsa -C &quot;youremail@your.com” -f ~&#x2F;.ssh&#x2F;github-rsa   在~&#x2F;.ssh&#x2F;目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add d">
 <meta property="article:published_time" content="2019-12-20T08:15:06.000Z">
-<meta property="article:modified_time" content="2019-12-25T01:35:29.420Z">
+<meta property="article:modified_time" content="2019-12-25T08:50:22.191Z">
 <meta property="article:author" content="sweep monk">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -339,7 +341,28 @@
       
 
       
-        
+        <h4 id="1-1生成SSH-KEY"><a href="#1-1生成SSH-KEY" class="headerlink" title="1.1生成SSH-KEY"></a>1.1生成SSH-KEY</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@your.com” -f ~/.ssh/github-rsa</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在~/.ssh/目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add deploy key）SSH-key的配置中。</p>
+</blockquote>
+<h4 id="1-2测试配置是否成功"><a href="#1-2测试配置是否成功" class="headerlink" title="1.2测试配置是否成功"></a>1.2测试配置是否成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>成功提示：Hi sweep-monk/blog! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<h4 id="1-3-修改hexo的配置文件-config-yml"><a href="#1-3-修改hexo的配置文件-config-yml" class="headerlink" title="1.3 修改hexo的配置文件_config.yml"></a>1.3 修改hexo的配置文件_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: https://github.com/sweep-monk/blog.git</span></span><br><span class="line">  repo: git@github.com:sweep-monk/blog.git    </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-扩展"><a href="#1-4-扩展" class="headerlink" title="1.4 扩展"></a>1.4 扩展</h4><h5 id="1-4-1-配置ssh后，测试报错Permission-denied-publickey"><a href="#1-4-1-配置ssh后，测试报错Permission-denied-publickey" class="headerlink" title="1.4.1 配置ssh后，测试报错Permission denied (publickey)."></a>1.4.1 配置ssh后，测试报错Permission denied (publickey).</h5><ul>
+<li><p>执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果执行ssh-add时提示”Could not open a connection to your authentication agent”</p>
+</li>
+<li><p>可能是配置多个SSH—Key引起的</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -369,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/20/hexo/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" rel="next" title="在Hexo博客中插入图片">
-                <i class="fa fa-chevron-left"></i> 在Hexo博客中插入图片
+              <a href="/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/" rel="next" title="git配置多个SSH-Key">
+                <i class="fa fa-chevron-left"></i> git配置多个SSH-Key
               </a>
             
           </div>
@@ -433,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,7 +485,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -464,7 +496,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -475,7 +507,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -508,6 +540,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1生成SSH-KEY"><span class="nav-number">1.</span> <span class="nav-text">1.1生成SSH-KEY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2测试配置是否成功"><span class="nav-number">2.</span> <span class="nav-text">1.2测试配置是否成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-修改hexo的配置文件-config-yml"><span class="nav-number">3.</span> <span class="nav-text">1.3 修改hexo的配置文件_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-扩展"><span class="nav-number">4.</span> <span class="nav-text">1.4 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-1-配置ssh后，测试报错Permission-denied-publickey"><span class="nav-number">4.1.</span> <span class="nav-text">1.4.1 配置ssh后，测试报错Permission denied (publickey).</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
