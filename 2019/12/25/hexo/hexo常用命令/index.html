@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="绝对路径当Hexo项目中只用到少量图片时，可以将图片统一放在source&#x2F;images文件夹中，通过markdown语法访问它们。 1![](&#x2F;images&#x2F;image.jpg)  相对路径图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生成。 _config.yml 1post_asset_folder:">
+<meta name="description" content="1. 1新建文章 new 1$ hexo new [layout] &lt;title&gt;  事例：（中间有空格用引号，[layout为默认的post文件夹]） 1$ hexo new &quot;post title with whitespace&quot;  在指定路径下新建文章 1hexo new page --path about&#x2F;me &quot;About me&quot;  其他    参数 描述    -p, --">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Hexo博客中插入图片的各种方式">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;20&#x2F;%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%B9%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="hexo常用命令">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;25&#x2F;hexo&#x2F;hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
 <meta property="og:site_name" content="sweep monk">
-<meta property="og:description" content="绝对路径当Hexo项目中只用到少量图片时，可以将图片统一放在source&#x2F;images文件夹中，通过markdown语法访问它们。 1![](&#x2F;images&#x2F;image.jpg)  相对路径图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生成。 _config.yml 1post_asset_folder:">
-<meta property="article:published_time" content="2019-12-20T07:22:53.000Z">
-<meta property="article:modified_time" content="2019-12-20T08:12:29.767Z">
+<meta property="og:description" content="1. 1新建文章 new 1$ hexo new [layout] &lt;title&gt;  事例：（中间有空格用引号，[layout为默认的post文件夹]） 1$ hexo new &quot;post title with whitespace&quot;  在指定路径下新建文章 1hexo new page --path about&#x2F;me &quot;About me&quot;  其他    参数 描述    -p, --">
+<meta property="article:published_time" content="2019-12-25T01:02:42.000Z">
+<meta property="article:modified_time" content="2019-12-25T01:38:12.416Z">
 <meta property="article:author" content="sweep monk">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/20/在Hexo博客中插入图片的各种方式/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/25/hexo/hexo常用命令/"/>
 
 
 
 
 
-  <title>在Hexo博客中插入图片的各种方式 | sweep monk</title>
+  <title>hexo常用命令 | sweep monk</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/hexo/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sweep monk">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在Hexo博客中插入图片的各种方式</h1>
+          <h1 class="post-title" itemprop="name headline">hexo常用命令</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-20T15:22:53+08:00">
-                2019-12-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T09:02:42+08:00">
+                2019-12-25
               </time>
             
 
@@ -341,27 +341,128 @@
       
 
       
-        <h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>当Hexo项目中只用到少量图片时，可以将图片统一放在<code>source/images</code>文件夹中，通过markdown语法访问它们。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](&#x2F;images&#x2F;image.jpg)</span><br></pre></td></tr></table></figure>
+        <h4 id="1-1新建文章"><a href="#1-1新建文章" class="headerlink" title="1. 1新建文章"></a>1. 1新建文章</h4><ul>
+<li><p>new</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p>
-<p>_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<p>事例：（中间有空格用引号，[layout为默认的post文件夹]）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"post title with whitespace"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在指定路径下新建文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path about/me <span class="string">"About me"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--path</code></td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code>, <code>--replace</code></td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--slug</code></td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="1-2-生成静态文件"><a href="#1-2-生成静态文件" class="headerlink" title="1.2 生成静态文件"></a>1.2 生成静态文件</h4><blockquote>
+<p>上传github前，需生成静态文件</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为<code>true</code>后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p>
-<p>_posts/post_name/image.jpg</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 
-<p>上述是markdown的引用方式，图片只能在文章中显示，但无法在首页中正常显示。</p>
-<p>如果希望图片在<strong>文章和首页中同时显示</strong>，可以使用标签插件语法。</p>
-<p>_posts/post_name/image.jpg</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img image.jpg This is an image %&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+<tr>
+<td align="left"><code>-b</code>, <code>--bail</code></td>
+<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td align="left"><code>-f</code>, <code>--force</code></td>
+<td align="left">强制重新生成文件 Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。 使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td align="left"><code>-c</code>, <code>--concurrency</code></td>
+<td align="left">最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<h4 id="1-3-发表草稿。"><a href="#1-3-发表草稿。" class="headerlink" title="1.3 发表草稿。"></a>1.3 发表草稿。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 
-<p> 网络图片资源，限制图片显示尺寸</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img [class names] &#x2F;path&#x2F;to&#x2F;image [width] [height] &quot;title text &#39;alt text&#39;&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<p>简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo p</span><br></pre></td></tr></table></figure>
 
-<h4 id="网络图片引用"><a href="#网络图片引用" class="headerlink" title="网络图片引用"></a>网络图片引用</h4><h5 id="CDN引用"><a href="#CDN引用" class="headerlink" title="CDN引用"></a>CDN引用</h5><p>除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如<a href="http://cloudinary.com/" target="_blank" rel="noopener">Cloudinary</a>提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img http:&#x2F;&#x2F;www.viemu.com&#x2F;vi-vim-cheat-sheet.gif 200 400 vi-vim-cheat-sheet %&#125;</span><br></pre></td></tr></table></figure>
+<p>显示草稿：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --draft</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
+</blockquote>
+<h4 id="1-4-启动服务器"><a href="#1-4-启动服务器" class="headerlink" title="1.4 启动服务器"></a>1.4 启动服务器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h4 id="1-5-部署网站"><a href="#1-5-部署网站" class="headerlink" title="1.5 部署网站"></a>1.5 部署网站</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>简写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-6-清除缓存文件"><a href="#1-6-清除缓存文件" class="headerlink" title="1.6 清除缓存文件"></a>1.6 清除缓存文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+</blockquote>
+<h4 id="1-7-列出网站资料"><a href="#1-7-列出网站资料" class="headerlink" title="1.7 列出网站资料"></a>1.7 列出网站资料</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo list &lt;<span class="built_in">type</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-8-博客系统迁移"><a href="#1-8-博客系统迁移" class="headerlink" title="1.8 博客系统迁移"></a>1.8 博客系统迁移</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo migrate &lt;<span class="built_in">type</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">迁移方法</a></p>
+
       
     </div>
     
@@ -391,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/20/hexo%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE/" rel="next" title="hexo创建分类和标签">
-                <i class="fa fa-chevron-left"></i> hexo创建分类和标签
+              <a href="/2019/12/20/hexo/hexo%E8%AE%BE%E7%BD%AEssh/" rel="next" title="hexo设置ssh">
+                <i class="fa fa-chevron-left"></i> hexo设置ssh
               </a>
             
           </div>
@@ -400,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/20/%E8%AE%BE%E7%BD%AE-SSH-%E4%BD%BF%E7%94%A8-hexo-deploy-%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/" rel="prev" title="设置 SSH 使用 hexo deploy 时免输用户名密码">
-                设置 SSH 使用 hexo deploy 时免输用户名密码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -484,7 +581,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -549,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对路径"><span class="nav-number">1.</span> <span class="nav-text">绝对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对路径"><span class="nav-number">2.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络图片引用"><span class="nav-number">3.</span> <span class="nav-text">网络图片引用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CDN引用"><span class="nav-number">3.1.</span> <span class="nav-text">CDN引用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1新建文章"><span class="nav-number">1.</span> <span class="nav-text">1. 1新建文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-生成静态文件"><span class="nav-number">2.</span> <span class="nav-text">1.2 生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-发表草稿。"><span class="nav-number">3.</span> <span class="nav-text">1.3 发表草稿。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-启动服务器"><span class="nav-number">4.</span> <span class="nav-text">1.4 启动服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-部署网站"><span class="nav-number">5.</span> <span class="nav-text">1.5 部署网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-清除缓存文件"><span class="nav-number">6.</span> <span class="nav-text">1.6 清除缓存文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-列出网站资料"><span class="nav-number">7.</span> <span class="nav-text">1.7 列出网站资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-博客系统迁移"><span class="nav-number">8.</span> <span class="nav-text">1.8 博客系统迁移</span></a></li></ol></div>
             
 
           </div>
