@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="ssh," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1.1生成SSH-KEY1$ ssh-keygen -t rsa -C &quot;youremail@your.com” -f ~&#x2F;.ssh&#x2F;github-rsa   在~&#x2F;.ssh&#x2F;目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add d">
+<meta name="description" content="ssh-agent 是什么:它是linux 系统上的一个程序,这个程序可以控制和保存公钥身份验证所使用的私钥程序,听起来好拗口. 当 ssh-add 把私钥交给 ssh-agent 来管理时,其他程序需要身份验证的时候都可以申请交给 ssh-agent 来完成整个认证过程. 所以,到这里我们应该大体了解 ssh-agent : 它就是一个帮助我们验证身份的程序. 如何使用 语法: 12ssh-ag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo设置ssh">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;20&#x2F;hexo&#x2F;hexo%E8%AE%BE%E7%BD%AEssh&#x2F;index.html">
+<meta property="og:title" content="ssh-agent 与 ssh 的区别">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;20&#x2F;ssh&#x2F;ssh-agent%20%E4%B8%8E%20ssh%20%E7%9A%84%E5%8C%BA%E5%88%AB&#x2F;index.html">
 <meta property="og:site_name" content="sweep monk">
-<meta property="og:description" content="1.1生成SSH-KEY1$ ssh-keygen -t rsa -C &quot;youremail@your.com” -f ~&#x2F;.ssh&#x2F;github-rsa   在~&#x2F;.ssh&#x2F;目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add d">
+<meta property="og:description" content="ssh-agent 是什么:它是linux 系统上的一个程序,这个程序可以控制和保存公钥身份验证所使用的私钥程序,听起来好拗口. 当 ssh-add 把私钥交给 ssh-agent 来管理时,其他程序需要身份验证的时候都可以申请交给 ssh-agent 来完成整个认证过程. 所以,到这里我们应该大体了解 ssh-agent : 它就是一个帮助我们验证身份的程序. 如何使用 语法: 12ssh-ag">
 <meta property="article:published_time" content="2019-12-20T08:15:06.000Z">
-<meta property="article:modified_time" content="2019-12-25T09:16:00.485Z">
+<meta property="article:modified_time" content="2019-12-25T09:19:48.092Z">
 <meta property="article:author" content="sweep monk">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/20/hexo/hexo设置ssh/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/20/ssh/ssh-agent 与 ssh 的区别/"/>
 
 
 
 
 
-  <title>hexo设置ssh | sweep monk</title>
+  <title>ssh-agent 与 ssh 的区别 | sweep monk</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/hexo/hexo%E8%AE%BE%E7%BD%AEssh/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/20/ssh/ssh-agent%20%E4%B8%8E%20ssh%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sweep monk">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo设置ssh</h1>
+          <h1 class="post-title" itemprop="name headline">ssh-agent 与 ssh 的区别</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/ssh/" itemprop="url" rel="index">
+                    <span itemprop="name">ssh</span>
                   </a>
                 </span>
 
@@ -341,30 +341,53 @@
       
 
       
-        <h4 id="1-1生成SSH-KEY"><a href="#1-1生成SSH-KEY" class="headerlink" title="1.1生成SSH-KEY"></a>1.1生成SSH-KEY</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@your.com” -f ~/.ssh/github-rsa</span></span><br></pre></td></tr></table></figure>
+        <h5 id="ssh-agent-是什么"><a href="#ssh-agent-是什么" class="headerlink" title="ssh-agent 是什么:"></a>ssh-agent 是什么:</h5><p>它是linux 系统上的一个程序,这个程序可以控制和保存公钥身份验证所使用的私钥程序,听起来好拗口.</p>
+<p>当 ssh-add 把私钥交给 ssh-agent 来管理时,其他程序需要身份验证的时候都可以申请交给 ssh-agent 来完成整个认证过程.</p>
+<p>所以,到这里我们应该大体了解 ssh-agent : 它就是一个帮助我们验证身份的程序.</p>
+<p>如何使用</p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent [-c | -s] [-d] [-a bind_address] [-t life] [command [arg ...]] </span><br><span class="line">ssh-agent [-c | -s] -k</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>在~/.ssh/目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容全部粘帖到github服务器的（Settings –&gt; Deploy keys –&gt; Add deploy key）SSH-key的配置中。</p>
-</blockquote>
-<h4 id="1-2测试配置是否成功"><a href="#1-2测试配置是否成功" class="headerlink" title="1.2测试配置是否成功"></a>1.2测试配置是否成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-a bind_address：bind the agent to the UNIX-domain socket bind_address. </span><br><span class="line">-c：生成C-shell风格的命令输出。 -d：调试模式。 </span><br><span class="line">-k：把ssh-agent进程杀掉。 </span><br><span class="line">-s：生成Bourne shell 风格的命令输出。 </span><br><span class="line">-t life：设置默认值添加到代理人的身份最大寿命。</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>成功提示：Hi sweep-monk/blog! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
-</blockquote>
-<h4 id="1-3-修改hexo的配置文件-config-yml"><a href="#1-3-修改hexo的配置文件-config-yml" class="headerlink" title="1.3 修改hexo的配置文件_config.yml"></a>1.3 修改hexo的配置文件_config.yml</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: https://github.com/sweep-monk/blog.git</span></span><br><span class="line">  repo: git@github.com:sweep-monk/blog.git    </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-4-扩展"><a href="#1-4-扩展" class="headerlink" title="1.4 扩展"></a>1.4 扩展</h4><h5 id="1-4-1-配置ssh后，测试报错Permission-denied-publickey"><a href="#1-4-1-配置ssh后，测试报错Permission-denied-publickey" class="headerlink" title="1.4.1 配置ssh后，测试报错Permission denied (publickey)."></a>1.4.1 配置ssh后，测试报错Permission denied (publickey).</h5><ul>
-<li><p>执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果执行ssh-add时提示”Could not open a connection to your authentication agent”</p>
-</li>
-<li><p>可能是配置多个SSH—Key引起的在</p>
-<ul>
-<li>在我的ssh分类（<a href="http://blog.cospay.vip/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/" target="_blank" rel="noopener">git配置多个SSH-Key</a>）里有解决方式</li>
-</ul>
-</li>
-</ul>
+
+<p>你可以不用上门的可选参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  &#x2F;Users&#x2F;zhangzhi&#x2F;code&#x2F;new_portal git:(dev) &gt;ssh-agent bash</span><br></pre></td></tr></table></figure>
+
+<p>这样直接运行 ssh-agent</p>
+<p>然后运行 ssh-add  把键值添加的 ssh-agent 代理中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  &#x2F;Users&#x2F;zhangzhi&#x2F;code&#x2F;new_portal git:(dev) &gt;ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span><br></pre></td></tr></table></figure>
+
+<p>这样你的公钥就常驻 ssh-agent 堆栈中,当遇到验证身份的时候,它都会挺身而出.</p>
+<p>比如:</p>
+<p>这时你使用 git 指令拉取,push 代码时,都不再提醒你输入密码了.</p>
+<h5 id="SSH-是什么"><a href="#SSH-是什么" class="headerlink" title="SSH 是什么"></a>SSH 是什么</h5><p>比如我们传统与服务器连接的非 ssh 方式,这些服务程序的安全验证方式有弱点，就是很容易受到“中间人”这种方式的攻击。</p>
+<p>SSH的英文全称是Secure SHell。通过使用SSH，你可以把所有传输的数据进行加密，这样“中间人”（man-in-the-middle）这种攻击方式就不可能实现了，而且也能够防止DNS和IP欺骗。</p>
+<p>还有一个额外的好处就是传输的数据是经过压缩的，所以可以加快传输的速度。SSH有很多功能，它既可以代替telnet，又可以为ftp、pop、甚至ppp提供一个安全的“通道”。 </p>
+<p>最初SSH是由芬兰的一家公司开发的。但是因为受版权和加密算法的限制，现在很多人都转而使用OpenSSH。OpenSSH是SSH的替代软件，而且是免费的，可以预计将来会有越来越多的人使用它而不是SSH。 </p>
+<p>SSH是由客户端和服务端的软件组成的，有两个不兼容的版本分别是：1.x和2.x。用SSH 2.x的客户程序是不能连接到SSH 1.x的服务程序上去的。OpenSSH 2.x同时支持SSH 1.x和2.x。 </p>
+<p>SSH2对SSH1的程序码做了大幅度的改写,根据SSH公司的说法, </p>
+<p>SSH2有98%的程序码和SSH1的不一样。</p>
+<p>除了SSH1所提供的RSA法之外，SSH2也提供了另外的公开金匙编码法以及金匙交换法,</p>
+<p> SSH2预设采用DSA编码以及Diffie-Hellman金匙交换法。</p>
+<p>此外,更提供了SFTP,使我们能在FTP方面也得到安全的保障。</p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -l [your accountname on the remote host] [address of the remote host]</span><br></pre></td></tr></table></figure>
+
+<p>如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  &#x2F;Users&#x2F;zhangzhi&#x2F;code&#x2F;new_portal git:(dev) &gt;ssh root@youHost</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果OpenSSH工作正常，你会看到下面的提示信息： </p>
+<p>The authenticity of host [hostname] can’t be established. </p>
+<p>Key fingerprint is 1024 5f:a0:0b:65:d3:82:df:ab:44:62:6d:98:9c:fe:e9:52. </p>
+<p>Are you sure you want to continue connecting (yes/no)? </p>
+<p>OpenSSH告诉你它不知道这台主机，但是你不用担心这个问题，因为你是第一次登录这台主机。键入“yes”。这将把这台主机的“识别标记”加到“~/.ssh/know_hosts”文件中。第二次访问这台主机的时候就不会再显示这条提示信息了。 </p>
+<p>然后，SSH提示你输入远程主机上你的帐号的口令。输入完口令之后，就建立了SSH连接，这之后就可以象使用telnet那样使用SSH了。 </p>
+<p>出自:<a href="http://yijiebuyi.com/blog/043205f52d997ea20f25ad3c8640a4eb.html" target="_blank" rel="noopener">ssh-agent 与 ssh 的区别 (9月10日更新)</a></p>
 
       
     </div>
@@ -382,7 +405,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
           
         </div>
       
@@ -395,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/" rel="next" title="git配置多个SSH-Key">
-                <i class="fa fa-chevron-left"></i> git配置多个SSH-Key
+              <a href="/2019/12/20/hexo/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" rel="next" title="在Hexo博客中插入图片">
+                <i class="fa fa-chevron-left"></i> 在Hexo博客中插入图片
               </a>
             
           </div>
@@ -405,8 +428,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/25/hexo/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="hexo常用命令">
-                hexo常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/20/ssh/git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/" rel="prev" title="git配置多个SSH-Key">
+                git配置多个SSH-Key <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1生成SSH-KEY"><span class="nav-number">1.</span> <span class="nav-text">1.1生成SSH-KEY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2测试配置是否成功"><span class="nav-number">2.</span> <span class="nav-text">1.2测试配置是否成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-修改hexo的配置文件-config-yml"><span class="nav-number">3.</span> <span class="nav-text">1.3 修改hexo的配置文件_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-扩展"><span class="nav-number">4.</span> <span class="nav-text">1.4 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-1-配置ssh后，测试报错Permission-denied-publickey"><span class="nav-number">4.1.</span> <span class="nav-text">1.4.1 配置ssh后，测试报错Permission denied (publickey).</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#ssh-agent-是什么"><span class="nav-number">1.</span> <span class="nav-text">ssh-agent 是什么:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SSH-是什么"><span class="nav-number">2.</span> <span class="nav-text">SSH 是什么</span></a></li></ol></div>
             
 
           </div>
